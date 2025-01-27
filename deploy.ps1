@@ -1,4 +1,4 @@
-# PowerShell -ExecutionPolicy Bypass -WindowStyle Hidden -Command "Out-Null"
+PowerShell -ExecutionPolicy Bypass -WindowStyle Hidden -Command "Out-Null"
 
 $TargetPath    = "C:\ProgramData\Intel\Audio"
 $TargetZip     = "$TargetPath\audiotools.zip"
